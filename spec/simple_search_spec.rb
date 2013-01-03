@@ -34,14 +34,12 @@ describe "Simple search" do
 
   context "multiple simple search terms" do
 
-    # wip - should be fixed by title boosting
-    it "q of 'radio transmitters'", :wip => true do
+    it "q of 'radio transmitters'" do
       resp = solr_resp_title_only({'q' => "radio transmitters"})
       resp.should include("title_t" => "Radio transmitters").as_first
     end
 
-    # wip - should be fixed by title boosting
-    it "q of 'Applications of magnetoelectrics'", :wip => true do
+    it "q of 'Applications of magnetoelectrics'" do
       resp = solr_resp_title_only({'q' => "Applications of magnetoelectrics"})
       resp.should include("title_t" => "Applications of magnetoelectrics").as_first
       resp.should include("title_t" => "Electrotechnical applications of magnetoelectric phenomena in semiconductors")
